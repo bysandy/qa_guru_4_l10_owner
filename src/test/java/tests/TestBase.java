@@ -13,7 +13,8 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.AttachmentsHelper.*;
 
 public class TestBase {
-    static final WebDriverConfig config= ConfigFactory.create(WebDriverConfig.class, System.getProperty());
+    static final WebDriverConfig config= ConfigFactory
+            .create(WebDriverConfig.class, System.getProperties());
 
     @BeforeAll
     static void setup() {

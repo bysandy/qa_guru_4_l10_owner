@@ -43,3 +43,5 @@ target/
 
 #Telegram bot exception
 !allure-piechart-telegram-2.0.5.jar
+!src/test/resources/config/chrome.properties
+!src/test/resources/config/selenoid.properties

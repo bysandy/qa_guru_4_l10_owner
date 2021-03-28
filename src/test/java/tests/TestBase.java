@@ -20,17 +20,17 @@ public class TestBase {
     static void setup() {
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         Configuration.browser = config.getWebDriverBrowser();
-        Configuration.browser = config.getWebDriverBrowserVersion();
+        Configuration.browserVersion = config.getWebDriverBrowserVersion();
 //        Configuration.browser = System.getProperty("browser", "chrome"); for jenkins
         Configuration.startMaximized = true;
 
-        if(System.getProperty("remote_driver") != null) {
+        if(config.getRemoteWebDriver() != null) {
             // config for Java + Selenide
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = config.getRemoteWebDriverUrl();
+        Configuration.remote = config.getRemoteWebDriver();
  //       Configuration.remote = System.getProperty("remote_driver"); need to add parameters in  jenkins
  //       Configuration.remote = "https://user1:1234@selenoid.autotests.cloud:4444/wd/hub/"; hardcode
         }

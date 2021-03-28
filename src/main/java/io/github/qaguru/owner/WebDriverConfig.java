@@ -6,13 +6,15 @@ import org.aeonbits.owner.Config;
 public interface WebDriverConfig extends Config {
 
     @Key("webDriverBrowser")
+    @DefaultValue("chrome")
     String getWebDriverBrowser();
 
     @Key("webDriverBrowserVersion")
+    @DefaultValue("87.0")
     String getWebDriverBrowserVersion();
 
     @Key("remoteWebDriver")
-    String getRemoteWebDriverUrl();
+    String getRemoteWebDriver();
 
     @Key("videoStorage")
     String getVideoStorage();
